@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Contacts.AddContactPage">
+	<ContentPage.Content>
+		<StackLayout>
+			<ActivityIndicator AutomationId="indIsBusy" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+			<Entry AutomationId="entContactName" Placeholder="Nombre" Text="{Binding Name}" />
+			<Entry AutomationId="entPhoneNumber" Placeholder="Teléfono" Text="{Binding PhoneNumber}" />
+			<Button AutomationId="btnAddContact" Text="Agregar Contacto" Command="{Binding AddContactCommand}" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

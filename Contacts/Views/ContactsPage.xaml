@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Contacts" x:Class="Contacts.ContactsPage" Title="Perfil" x:Name="ContactPage">
+	<StackLayout>
+		<Button Text="Nuevo Contacto" x:Name="btnAddContact" />
+		<ListView x:Name="lstContacts" ItemsSource="{Binding User.ContactsDirectory.Contacts}">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<ViewCell.ContextActions>
+							<MenuItem Text="Eliminar" AutomationId="miDeleteContact"
+								Command="{Binding Source={x:Reference ContactPage}, Path=BindingContext.DeleteContactCommand}" 
+								CommandParameter="{Binding}" />
+						</ViewCell.ContextActions>
+						<StackLayout Orientation="Vertical">
+							<Label AutomationId="lblName" Text="{Binding Name}" />
+							<Label AutomationId="lblPhoneNumber" Text="{Binding PhoneNumber}" />
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Contacts.UserProfilePage" Title="Perfil">
+	<ContentPage.Content>
+	  <StackLayout>
+      <ActivityIndicator AutomationId="indIsBusy" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+      <Entry AutomationId="entMail" Placeholder="E-Mail" Text="{Binding Mail}" />
+      <Entry AutomationId="entBirthday" Placeholder="Fecha de nacimiento" Text="{Binding Birthday}"/>
+      <Entry AutomationId="entPhoneNumber" Placeholder="Teléfono" Text="{Binding PhoneNumber}"/>
+      <Entry AutomationId="entAddress" Placeholder="Dirección" Text="{Binding Address}"/>
+      <Button AutomationId="btnSaveProfile" Text="Guardar" Command="{Binding SaveCommand}"></Button>
+    </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
